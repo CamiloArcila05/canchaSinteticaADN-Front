@@ -1,0 +1,85 @@
+<mat-card>
+  <div class="gene-card-title">
+    <div fxLayout="row"
+         fxLayoutAlign="center center">
+      <div fxLayout="column">
+        <h3>{{' Gestio De Canchas - Crear Cancha'}}</h3>
+      </div>
+    </div>
+  </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <form [formGroup]="canchaForm">
+        <div fxLayout="row">
+          <div fxLayout="column" fxFlex="25">
+            <strong class="margin-label">Nombre: </strong>
+          </div>
+
+          <div fxLayout="column" fxFlex="75">
+            <input validar
+                   type="text"
+                   id="nombre"
+                   name="nombre"
+                   class="form-control size-input margin"
+                   formControlName="nombre">
+          </div>
+        </div>
+
+        <div fxLayout="row">
+          <div fxLayout="column" fxFlex="25">
+            <strong class="margin-label">Valor Dia: </strong>
+          </div>
+
+          <div fxLayout="column" fxFlex="75">
+            <input validar
+                   type="text"
+                   currencyMask
+                   [options]="{precision: 0, align: 'left'}"
+                   id="valorDia"
+                   name="valorDia"
+                   placeholder="Valor Dia"
+                   class="form-control size-input margin"
+                   formControlName="valorDia">
+          </div>
+        </div>
+
+        <div fxLayout="row">
+          <div fxLayout="column" fxFlex="25">
+            <strong class="margin-label">Valor Noche: </strong>
+          </div>
+
+          <div fxLayout="column" fxFlex="75">
+            <input validar
+                   type="text"
+                   currencyMask
+                   [options]="{precision: 0, align: 'left'}"
+                   id="valorNoche"
+                   name="valorNoche"
+                   placeholder="Valor Noche"
+                   class="form-control size-input margin"
+                   formControlName="valorNoche">
+          </div>
+        </div>
+
+        <div fxLayout="row">
+          <div fxLayout="column" fxFlex="25">
+            <strong class="margin-label">Descripcion: </strong>
+          </div>
+
+          <div fxLayout="column" fxFlex="75">
+            <textarea validar
+                      type="text"
+                      id="descripcion"
+                      name="descripcion"
+                      class="form-control size-input margin"
+                      formControlName="descripcion"></textarea>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-danger btn-sm margin" (click)="cancelar()">Cancelar</button>
+          <button type="button" [disabled]="canchaForm.invalid"  class="btn btn-success btn-sm" (click)="crearCancha()">Crear</button>
+        </div>
+      </form>
+    </div>
+</mat-card>
+

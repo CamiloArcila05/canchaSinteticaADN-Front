@@ -1,0 +1,4 @@
+<nav>
+  <a *ngFor="let item of items" [routerLink]="item.url" routerLinkActive="active">
+    <strong>{{item.nombre}}</strong></a>
+</nav>

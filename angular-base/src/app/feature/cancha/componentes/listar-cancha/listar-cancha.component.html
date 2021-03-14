@@ -1,0 +1,50 @@
+<mat-card>
+  <div class="gene-card-title">
+    <div fxLayout="row"
+         fxLayoutAlign="center center">
+      <div fxLayout="column">
+        <h3>{{' Gestio De Canchas - Listado'}}</h3>
+      </div>
+    </div>
+    <div fxLayout="row"
+         fxLayoutAlign="end end">
+      <div fxLayout="column">
+        <button type="button" class="btn btn-success btn-sm margin" (click)="crearCancha()">Nueva Cancha</button>
+      </div>
+    </div>
+  </div>
+  <div class="gene-card-content">
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="column" fxFlex="100%">
+
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="text-center" scope="col">ID</th>
+            <th class="text-center" scope="col">Nombre</th>
+            <th class="text-center" scope="col">Descripcion</th>
+            <th class="text-center" scope="col">Valor Dia</th>
+            <th class="text-center" scope="col">Valor Noche</th>
+            <th class="text-center" scope="col">Estado</th>
+            <th class="text-center" scope="col">Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let cancha of canchas; index as i">
+            <td class="text-center" >{{ cancha.id }}</td>
+            <td class="text-center" >{{ cancha.nombre }}</td>
+            <td class="text-center">{{ cancha.descripcion}}</td>
+            <td class="text-center" >{{ cancha.valorDia | currency }}</td>
+            <td class="text-center">{{ cancha.valorNoche | currency }}</td>
+            <td class="text-center" >{{ cancha.estado}}</td>
+            <td class="text-center" >
+              <button type="button" class="btn btn-warning btn-sm margin" (click)="actualizarCancha(cancha)">Actualizar</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</mat-card>

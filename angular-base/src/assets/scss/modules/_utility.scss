@@ -1,0 +1,25 @@
+// Utility
+/* TOASTR BUGFIX */
+#toast-container > div {
+  opacity: 1;
+}
+.toast {
+  font-size: initial !important;
+  border: initial !important;
+  backdrop-filter: blur(0) !important;
+}
+.toast-success {
+  background-color: #28a745 !important;
+}
+.toast-error {
+  background-color: #dc3545 !important;
+}
+
+.toast-warning {
+  background-color: #F89406;
+}
+
+.toast-info {
+  background-color: #2F96B4;
+}
+// End Utility

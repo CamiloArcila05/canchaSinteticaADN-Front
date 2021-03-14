@@ -1,0 +1,18 @@
+<mat-card>
+  <div class="gene-card-title">
+    <div fxLayout="row"
+         fxLayoutAlign="center center">
+      <div fxLayout="column">
+        <h5>{{'Cancelar Reserva'}}</h5>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+     <p>{{'¿ Esta seguro que desea cancelar la reserva a nombre del señor(a): ' + reservaCancelar.nombreSolicita + ' ?'}}</p>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-danger btn-sm margin" (click)="cancelar()">Cancelar</button>
+    <button type="button" class="btn btn-success btn-sm" (click)="aceptar()">Aceptar</button>
+  </div>
+</mat-card>
+

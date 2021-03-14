@@ -1,0 +1,102 @@
+<mat-card>
+  <div class="gene-card-title">
+    <div fxLayout="row"
+         fxLayoutAlign="center center">
+      <div fxLayout="column">
+        <h3>{{' Gestio De Reservas - Crear Reserva'}}</h3>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="reservaForm">
+
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="25">
+          <strong class="margin-label">Cancha: </strong>
+        </div>
+
+        <div fxLayout="column" fxFlex="75">
+          <select name="canchaId"
+                  validar
+                  id="canchaId"
+                  class="form-control size-input margin"
+                  formControlName="canchaId">
+            <option [value]="cancha.id" *ngFor="let cancha of canchas;">{{cancha.nombre}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="25">
+          <strong class="margin-label">Nombre Solicita: </strong>
+        </div>
+
+        <div fxLayout="column" fxFlex="75">
+          <input validar
+                 type="text"
+                 id="nombreSolicita"
+                 name="nombreSolicita"
+                 class="form-control size-input margin"
+                 formControlName="nombreSolicita">
+        </div>
+      </div>
+
+
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="25">
+          <strong class="margin-label">Fecha: </strong>
+        </div>
+
+        <div fxLayout="column" fxFlex="75">
+          <input validar
+                 type="date"
+                 id="fecha"
+                 name="fecha"
+                 class="form-control size-input margin"
+                 formControlName="fecha">
+        </div>
+      </div>
+
+
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="25">
+          <strong class="margin-label">Hora: </strong>
+        </div>
+
+        <div fxLayout="column" fxFlex="75">
+          <select name="hora"
+                  validar
+                  id="hora"
+                  class="form-control size-input margin"
+                  formControlName="hora">
+            <option [value]="hora" *ngFor="let hora of horas;">{{hora}}</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="25">
+          <strong class="margin-label">Valor Abono: </strong>
+        </div>
+
+        <div fxLayout="column" fxFlex="75">
+          <input validar
+                 type="text"
+                 currencyMask
+                 [options]="{precision: 0, align: 'left'}"
+                 id="valorAbono"
+                 name="valorAbono"
+                 placeholder="Valor Abono"
+                 class="form-control size-input margin"
+                 formControlName="valorAbono">
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-danger btn-sm margin" (click)="cancelar()">Cancelar</button>
+        <button type="button" [disabled]="reservaForm.invalid"  class="btn btn-success btn-sm" (click)="crearReserva()">Crear</button>
+      </div>
+    </form>
+  </div>
+</mat-card>
+

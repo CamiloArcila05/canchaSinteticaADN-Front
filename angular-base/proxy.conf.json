@@ -1,0 +1,7 @@
+{
+  "/cancha-sintetica": {
+    "target": "http://localhost:9999",
+    "logLevel": "debug"
+  }
+
+}

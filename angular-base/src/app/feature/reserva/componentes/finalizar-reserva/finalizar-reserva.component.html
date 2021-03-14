@@ -1,0 +1,51 @@
+<mat-card>
+  <div class="gene-card-title">
+    <div fxLayout="row"
+         fxLayoutAlign="center center">
+      <div fxLayout="column">
+        <h3>{{'Finalizar Reserva'}}</h3>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+  <div fxLayout="row" *ngIf="!loading" fxLayoutAlign="center center">
+    <div fxLayout="column">
+      <strong class="margin">Nombre Solicita:</strong>
+      <strong class="margin">Cancha:</strong>
+      <strong class="margin">Fecha:</strong>
+      <strong class="margin">Hora:</strong>
+      <strong class="margin">Valor Cancha:</strong>
+      <strong class="margin">Valor Abono:</strong>
+    </div>
+
+    <div fxLayout="column">
+      <strong class="margin">{{reservaFinalizar.nombreSolicita}}</strong>
+      <strong class="margin">{{canchaSeleccionada?.nombre}}</strong>
+      <strong class="margin">{{reservaFinalizar.fecha}}</strong>
+      <strong class="margin">{{reservaFinalizar.hora}}</strong>
+      <strong class="margin">{{getValorCancha() | currency}}</strong>
+      <strong class="margin">{{reservaFinalizar.valorAbono | currency}}</strong>
+    </div>
+  </div>
+  <div fxLayout="row" *ngIf="!loading" fxLayoutAlign="center center">
+    <div fxLayout="column">
+      <strong class="margin">Valor Restante:</strong>
+    </div>
+
+    <div fxLayout="column">
+      <input validar
+             type="text"
+             currencyMask
+             [options]="{precision: 0, align: 'left'}"
+             placeholder="Valor Abono"
+             class="form-control size-input margin"
+             [formControl]="valorRestante">
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="button" class="btn btn-danger btn-sm margin" (click)="cancelar()">Cancelar</button>
+    <button type="button" class="btn btn-success btn-sm" (click)="aceptar()">Aceptar</button>
+  </div>
+</mat-card>
+

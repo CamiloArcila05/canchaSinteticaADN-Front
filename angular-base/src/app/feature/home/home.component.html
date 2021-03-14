@@ -1,0 +1,89 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="margin">
+  <img src="assets/img/imagen-toolbar.jpg">
+</div>
+
+<mat-card>
+  <div class="gene-card-title">
+    <div fxLayout="row"
+         fxLayoutAlign="center center">
+      <div fxLayout="column">
+        <h3>{{'CANCHA SINTETICA "LA CERO" - INICIO '}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="gene-card-content">
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+
+      <div fxLayout="column" fxFlex="50%">
+        <mat-card>
+          <div class="gene-card-title">
+            <div fxLayout="row"
+                 fxLayoutAlign="center center">
+              <div fxLayout="column">
+                <h3>{{'CANCHAS'}}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="row">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th class="text-center" scope="col">Activas</th>
+                <th class="text-center" scope="col">Inactivas</th>
+                <th class="text-center" scope="col">Total</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="text-center" >{{ this.canchasActivas }}</td>
+                <td class="text-center" >{{ this.canchasInactivas }}</td>
+                <td class="text-center" >{{ this.canchasTotal }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </mat-card>
+      </div>
+
+      <div fxLayout="column" fxFlex="50%">
+        <mat-card>
+          <div class="gene-card-title">
+            <div fxLayout="row"
+                 fxLayoutAlign="center center">
+              <div fxLayout="column">
+                <h3>{{'RESERVAS'}}</h3>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th class="text-center" scope="col">Activas</th>
+                <th class="text-center" scope="col">Finalizadas</th>
+                <th  class="text-center" scope="col">Canceladas</th>
+                <th  class="text-center" scope="col">Total</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="text-center">{{ this.reservasActivas }}</td>
+                <td class="text-center" >{{ this.reservasFinalizadas }}</td>
+                <td class="text-center">{{ this.reservasCanceladas }}</td>
+                <td class="text-center">{{ this.reservasTotal }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+        </mat-card>
+      </div>
+
+    </div>
+
+  </div>
+</mat-card>
+

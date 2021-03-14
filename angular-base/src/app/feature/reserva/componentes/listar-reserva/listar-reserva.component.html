@@ -1,0 +1,62 @@
+<mat-card>
+  <div class="gene-card-title">
+    <div fxLayout="row"
+         fxLayoutAlign="center center">
+      <div fxLayout="column">
+        <h3>{{' Gestio De Reservas - Listado'}}</h3>
+      </div>
+    </div>
+    <div fxLayout="row"
+         fxLayoutAlign="end end">
+      <div fxLayout="column">
+        <button type="button" class="btn btn-success btn-sm margin" (click)="crearReserva()">Nueva Reserva</button>
+      </div>
+    </div>
+  </div>
+  <div class="gene-card-content">
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="column" fxFlex="100%">
+
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="text-center" scope="col">ID</th>
+            <th class="text-center" scope="col">Cancha Id</th>
+            <th class="text-center" scope="col">Nombre Solicita</th>
+            <th class="text-center" scope="col">Fecha</th>
+            <th class="text-center" scope="col">Hora</th>
+            <th class="text-center" scope="col">Valor Abono</th>
+            <th class="text-center" scope="col">Valor Total</th>
+            <th class="text-center" scope="col">Estado</th>
+            <th class="text-center" scope="col">Acciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let reserva of reservas; index as i">
+            <td class="text-center" >{{ reserva.id }}</td>
+            <td class="text-center" >{{ reserva.canchaId }}</td>
+            <td class="text-center" >{{ reserva.nombreSolicita}}</td>
+            <td class="text-center" >{{ reserva.fecha}}</td>
+            <td class="text-center" >{{ reserva.hora}}</td>
+            <td class="text-center" >{{ reserva.valorAbono | currency }}</td>
+            <td class="text-center" >{{ reserva.valorTotal | currency }}</td>
+            <td class="text-center" >{{ reserva.estado}}</td>
+            <td class="text-center" >
+              <button type="button"
+                      class="btn btn-danger btn-sm margin"
+                      [disabled]="reserva.estado != 'ACTIVO'"
+                      (click)="cancelarReserva(reserva)">Cancelar</button>
+
+              <button type="button"
+                      [disabled]="reserva.estado != 'ACTIVO'"
+                      class="btn btn-warning btn-sm margin"
+                      (click)="finalizarReserva(reserva)">Finalizar</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</mat-card>
