@@ -39,6 +39,7 @@ export class ListarReservaComponent implements OnInit {
   }
 
   cancelarReserva(reservaSeleccionada: Reserva) {
+    console.log(JSON.stringify(reservaSeleccionada));
     localStorage.setItem('reservaSeleccionada', JSON.stringify(reservaSeleccionada));
     this.modalService.open(CancelarReservaComponent)
       .result

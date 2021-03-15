@@ -19,7 +19,7 @@ const RANGO_HORA_CAMBIO_VALOR = 17;
 export class FinalizarReservaComponent implements OnInit {
 
   reservaFinalizar: Reserva;
-  canchaSeleccionada: Cancha;
+  canchaSeleccionada: Cancha = null;
   loading = false;
 
   valorRestante = new FormControl(0, [Validators.required, Validators.min(0)]);

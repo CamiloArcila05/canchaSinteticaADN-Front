@@ -13,7 +13,6 @@ export class AppComponent {
     { url: '/inicio', nombre: 'Inicio' },
     { url: '/cancha', nombre: 'Canchas' },
     { url: '/reserva', nombre: 'Reservas' },
-
   ];
 
 

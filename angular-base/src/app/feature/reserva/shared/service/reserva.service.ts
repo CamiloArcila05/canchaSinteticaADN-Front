@@ -27,7 +27,7 @@ export class ReservaService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params: new HttpParams().set('reservaId', reservaId)
     };
-    return this.http.doPut<Reserva, boolean>(`${environment.endpointReserva}/cancelar-reserva`, null, opts);
+    return this.http.doPut<any, boolean>(`${environment.endpointReserva}/cancelar-reserva`, null, opts);
   }
 
   public finalizar(reservaId: any, valorIngresado: any) {
@@ -35,7 +35,7 @@ export class ReservaService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params: new HttpParams().set('reservaId', reservaId).set('valorIngresado', valorIngresado)
     };
-    return this.http.doPut<Reserva, boolean>(`${environment.endpointReserva}/finalizar-reserva`, null, opts);
+    return this.http.doPut<any, boolean>(`${environment.endpointReserva}/finalizar-reserva`, null, opts);
   }
 
   public eliminar(reserva: Reserva) {

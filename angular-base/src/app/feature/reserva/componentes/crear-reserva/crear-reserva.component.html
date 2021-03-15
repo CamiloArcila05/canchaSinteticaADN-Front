@@ -51,6 +51,7 @@
           <input validar
                  type="date"
                  id="fecha"
+                 [min]="minDate"
                  name="fecha"
                  class="form-control size-input margin"
                  formControlName="fecha">
@@ -93,8 +94,12 @@
         </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-danger btn-sm margin" (click)="cancelar()">Cancelar</button>
-        <button type="button" [disabled]="reservaForm.invalid"  class="btn btn-success btn-sm" (click)="crearReserva()">Crear</button>
+        <button type="button"
+                class="btn btn-danger btn-sm margin"
+                (click)="cancelar()">Cancelar</button>
+        <button type="button"
+                id="buttonCrearReserva"
+                [disabled]="reservaForm.invalid"  class="btn btn-success btn-sm" (click)="crearReserva()">Crear</button>
       </div>
     </form>
   </div>

@@ -77,7 +77,8 @@
 
         <div class="text-center">
           <button type="button" class="btn btn-danger btn-sm margin" (click)="cancelar()">Cancelar</button>
-          <button type="button" [disabled]="canchaForm.invalid"  class="btn btn-success btn-sm" (click)="crearCancha()">Crear</button>
+          <button type="button" id="buttonCrearCancha"
+                  [disabled]="canchaForm.invalid"  class="btn btn-success btn-sm" (click)="crearCancha()">Crear</button>
         </div>
       </form>
     </div>

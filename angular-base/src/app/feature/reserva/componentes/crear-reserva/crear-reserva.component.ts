@@ -7,6 +7,7 @@ import {CanchaService} from '../../../cancha/shared/service/cancha.service';
 import {ReservaService} from '../../shared/service/reserva.service';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {ToastrService} from 'ngx-toastr';
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-crear-reserva',
@@ -17,6 +18,7 @@ import {ToastrService} from 'ngx-toastr';
 
 export class CrearReservaComponent implements OnInit {
 
+  minDate:string;
   reservaForm: FormGroup;
   canchas: Cancha[];
   horas: Array<string> = [
@@ -24,7 +26,10 @@ export class CrearReservaComponent implements OnInit {
   ];
 
 
+
+
   constructor(private router: Router,
+              private datePipe: DatePipe,
               private reservaService: ReservaService,
               private canchaService: CanchaService,
               private spinner: NgxSpinnerService,
@@ -33,6 +38,8 @@ export class CrearReservaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const date = new Date();
+    this.minDate = this.datePipe.transform(date, 'yyyy-MM-dd');
     this.cargaFormulario();
     this.canchaService.consultar()
       .subscribe(

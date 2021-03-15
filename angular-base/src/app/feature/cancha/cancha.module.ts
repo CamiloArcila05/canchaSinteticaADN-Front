@@ -14,6 +14,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { CrearCanchaComponent } from './componentes/crear-cancha/crear-cancha.component';
 import { EditarCanchaComponent } from './componentes/editar-cancha/editar-cancha.component';
 import {CurrencyMaskModule} from 'ng2-currency-mask';
+import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {CurrencyMaskModule} from 'ng2-currency-mask';
     FlexLayoutModule,
     MatButtonModule,
     MatTooltipModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    NgbPaginationModule
   ],
   providers: [CanchaService]
 })

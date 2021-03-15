@@ -15,6 +15,7 @@ import {CancelarReservaComponent} from './componentes/cancelar-reserva/cancelar-
 import {ReservaService} from './shared/service/reserva.service';
 import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 import {MatDividerModule} from "@angular/material/divider";
+import {DatePipe} from "@angular/common";
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {MatDividerModule} from "@angular/material/divider";
     NgbDatepickerModule,
     MatDividerModule
   ],
-  providers: [ReservaService]
+  providers: [ReservaService, DatePipe]
 })
 export class ReservaModule {
 }
