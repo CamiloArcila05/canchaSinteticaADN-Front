@@ -5,13 +5,13 @@ describe('workspace-project Reserva', () => {
   let reserva: ReservaPage;
   const nombreSolicita = 'Camilo Prueba';
   const canchaId = 1;
-  const fecha = '11-12-2021';
+  const fecha = '12-12-2021';
   const hora = '20:00';
   const valorAbono  = 10000;
   const scriptLocalStorageCancelarReserva = `localStorage.setItem('reservaSeleccionada',
-     '{"id":"119","canchaId":"3127","nombreSolicita":"Camilo Prueba"}');`;
+     '{"id":"128","canchaId":"3141","nombreSolicita":"Camilo Prueba"}');`;
   const scriptLocalStorageFinalizarReserva = `localStorage.setItem('reservaSeleccionada',
-     '{"id":"120","canchaId":"3127","nombreSolicita":"Camilo Prueba","fecha":"2021-05-11","hora":"22:00","valorAbono":10000}');`;
+     '{"id":"129","canchaId":"3126","nombreSolicita":"Camilo Prueba","fecha":"2021-05-11","hora":"22:00","valorAbono":10000}');`;
 
   beforeEach(() => {
     reserva = new ReservaPage();

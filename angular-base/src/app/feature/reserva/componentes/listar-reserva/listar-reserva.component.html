@@ -62,6 +62,7 @@
 
         <ngb-pagination [collectionSize]="collectionSize"
                         [(page)]="page"
+                        *ngIf="collectionSize > 0"
                         [pageSize]="pageSize"
                         (pageChange)="refresTable()">
         </ngb-pagination>
