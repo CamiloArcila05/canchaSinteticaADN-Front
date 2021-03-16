@@ -34,29 +34,38 @@
           </thead>
           <tbody>
           <tr *ngFor="let reserva of reservas; index as i">
-            <td class="text-center" >{{ reserva.id }}</td>
-            <td class="text-center" >{{ reserva.canchaId }}</td>
-            <td class="text-center" >{{ reserva.nombreSolicita}}</td>
-            <td class="text-center" >{{ reserva.fecha}}</td>
-            <td class="text-center" >{{ reserva.hora}}</td>
-            <td class="text-center" >{{ reserva.valorAbono | currency }}</td>
-            <td class="text-center" >{{ reserva.valorTotal | currency }}</td>
-            <td class="text-center" >{{ reserva.estado}}</td>
-            <td class="text-center" >
+            <td class="text-center">{{ reserva.id }}</td>
+            <td class="text-center">{{ reserva.canchaId }}</td>
+            <td class="text-center">{{ reserva.nombreSolicita}}</td>
+            <td class="text-center">{{ reserva.fecha}}</td>
+            <td class="text-center">{{ reserva.hora}}</td>
+            <td class="text-center">{{ reserva.valorAbono | currency }}</td>
+            <td class="text-center">{{ reserva.valorTotal | currency }}</td>
+            <td class="text-center">{{ reserva.estado}}</td>
+            <td class="text-center">
               <button type="button"
                       class="btn btn-danger btn-sm margin"
                       id="buttonModalCancelarReserva"
                       [disabled]="reserva.estado != 'ACTIVO'"
-                      (click)="cancelarReserva(reserva)">Cancelar</button>
+                      (click)="cancelarReserva(reserva)">Cancelar
+              </button>
 
               <button type="button"
                       [disabled]="reserva.estado != 'ACTIVO'"
                       class="btn btn-warning btn-sm margin"
-                      (click)="finalizarReserva(reserva)">Finalizar</button>
+                      (click)="finalizarReserva(reserva)">Finalizar
+              </button>
             </td>
           </tr>
           </tbody>
         </table>
+
+        <ngb-pagination [collectionSize]="collectionSize"
+                        [(page)]="page"
+                        [pageSize]="pageSize"
+                        (pageChange)="refresTable()">
+        </ngb-pagination>
+
       </div>
     </div>
   </div>

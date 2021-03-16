@@ -13,7 +13,12 @@ export class ListarCanchaComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'valorDia', 'valorNoche', 'estado', 'acciones'];
   data;
 
+  canchasTable: Cancha[] = [];
   canchas: Cancha[] = [];
+
+  page = 1;
+  pageSize = 8;
+  collectionSize = 0;
 
   constructor(private canchaService: CanchaService,
               private router: Router,
@@ -25,9 +30,16 @@ export class ListarCanchaComponent implements OnInit {
       .subscribe(
         (response) => {
           this.canchas = response;
+          this.collectionSize = this.canchas.length;
+          this.refresTable();
         });
   }
 
+
+  refresTable() {
+    this.canchasTable = this.canchas
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
 
   crearCancha() {
     this.router.navigate([ 'crear-cancha' ], { relativeTo: this.route });

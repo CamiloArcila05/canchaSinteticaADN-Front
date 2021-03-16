@@ -13,7 +13,7 @@ import {CrearReservaComponent} from './componentes/crear-reserva/crear-reserva.c
 import {FinalizarReservaComponent} from './componentes/finalizar-reserva/finalizar-reserva.component';
 import {CancelarReservaComponent} from './componentes/cancelar-reserva/cancelar-reserva.component';
 import {ReservaService} from './shared/service/reserva.service';
-import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbDatepickerModule, NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 import {MatDividerModule} from "@angular/material/divider";
 import {DatePipe} from "@angular/common";
 
@@ -36,7 +36,8 @@ import {DatePipe} from "@angular/common";
     MatTooltipModule,
     CurrencyMaskModule,
     NgbDatepickerModule,
-    MatDividerModule
+    MatDividerModule,
+    NgbPaginationModule
   ],
   providers: [ReservaService, DatePipe]
 })

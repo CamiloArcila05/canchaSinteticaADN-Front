@@ -31,7 +31,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let cancha of canchas; index as i">
+          <tr *ngFor="let cancha of canchasTable; index as i">
             <td class="text-center" >{{ cancha.id }}</td>
             <td class="text-center" >{{ cancha.nombre }}</td>
             <td class="text-center">{{ cancha.descripcion}}</td>
@@ -45,6 +45,13 @@
           </tr>
           </tbody>
         </table>
+
+        <ngb-pagination [collectionSize]="collectionSize"
+                        [(page)]="page"
+                        [pageSize]="pageSize"
+                        (pageChange)="refresTable()">
+        </ngb-pagination>
+
       </div>
     </div>
   </div>
